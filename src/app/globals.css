@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
+/* Help Westmoreland Brand Colors */
 :root {
+  /* Primary Blue */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+
+  /* Accent Orange */
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Background & Foreground */
   --background: #ffffff;
   --foreground: #171717;
 }
 
 @theme inline {
+  /* Brand Colors */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Default Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Fonts */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
