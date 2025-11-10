@@ -87,10 +87,7 @@ export default function HelpPage() {
         <section id="volunteer" className="scroll-mt-24">
           <h2 className="text-3xl font-display font-bold mb-6">Volunteer</h2>
           <p className="text-lg text-gray-700 mb-8">
-            Your hands, time, and support can help rebuild Westmoreland. One
-            family, one home, one act of kindness at a time. Volunteers are the
-            heart of our mission—you bring relief, stability, and hope to
-            communities that need it most.
+            Your hands, time, and support can help rebuild Westmoreland. One family, one home, one act of kindness at a time. Volunteers are the heart of our mission, you bring relief, stability, and hope to communities that need it most.
           </p>
 
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -101,45 +98,39 @@ export default function HelpPage() {
               </h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-lg">🤝</span>
+                  <span className="text-primary-600 mr-3 text-lg">❤️</span>
                   <div>
-                    <strong>Sorting & Packing:</strong> Help organize donations
-                    and prepare relief packages
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-lg">🚚</span>
-                  <div>
-                    <strong>Delivery:</strong> Distribute supplies to families
-                    in need
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-lg">🏗️</span>
-                  <div>
-                    <strong>Construction:</strong> Assist with home repairs and
-                    rebuilding
+                    <strong>Counseling:</strong> Provide emotional support and therapy services
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary-600 mr-3 text-lg">📚</span>
                   <div>
-                    <strong>Education:</strong> Support school rebuilding and
-                    tutoring programs
+                    <strong>Education:</strong> Support school rebuilding and provide back to school supplies
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-lg">💻</span>
+                  <span className="text-primary-600 mr-3 text-lg">🌐</span>
                   <div>
-                    <strong>Remote Support:</strong> Help with social media,
-                    design, or administration
+                    <strong>Social media & Digital presence:</strong> Help with social media, design, or administration
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-lg">❤️</span>
+                  <span className="text-primary-600 mr-3 text-lg">💰</span>
                   <div>
-                    <strong>Counseling:</strong> Provide emotional support and
-                    therapy services
+                    <strong>Fundraising & donor outreach:</strong> Help raise critical funds and engage donors
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-3 text-lg">🤝</span>
+                  <div>
+                    <strong>Building credible partnerships:</strong> With businesses, churches, and community organizations
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary-600 mr-3 text-lg">🤝</span>
+                  <div>
+                    <strong>Sorting, Packing & Delivery:</strong> Help organize donations and prepare relief packages
                   </div>
                 </li>
               </ul>
@@ -157,9 +148,7 @@ export default function HelpPage() {
                   families.
                 </p>
                 <p>
-                  <strong>Flexible Schedule:</strong> We work with your
-                  availability—whether you can volunteer for a few hours or
-                  several days.
+                  <strong>Flexible Schedule:</strong> We work with your availability, whether you can volunteer for just a few hours or on an ongoing basis.
                 </p>
                 <p>
                   <strong>Community Impact:</strong> You'll see firsthand how
@@ -180,8 +169,7 @@ export default function HelpPage() {
               Volunteer Application
             </h3>
             <p className="text-gray-700 mb-6">
-              Ready to make a difference? Fill out the form below and our team
-              will contact you within 3-5 business days to discuss opportunities.
+              Ready to make a difference? Fill out the form below and our team will contact you to discuss opportunities.
             </p>
             <VolunteerForm />
           </div>

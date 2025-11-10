@@ -26,9 +26,7 @@ export default function DonatePage() {
 
             <div className="prose prose-lg mx-auto">
               <p className="text-xl text-gray-700">
-                When a storm destroys your home, you don't just lose walls and a
-                roof—you lose safety, normalcy, and the ability to protect the
-                people you love.
+                When a storm destroys your home, families don't just lose walls and a roof, they lose safety, normalcy, and the ability to protect the people they love.
               </p>
               <p className="text-xl text-gray-700">
                 Right now in Westmoreland, mothers are trying to calm frightened
@@ -190,101 +188,39 @@ export default function DonatePage() {
                   Partner With Us →
                 </a>
               </div>
-              <div className="bg-white p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  📢 Spread the Word
-                </h3>
-                <p className="text-gray-700 mb-3">
-                  Share our mission on social media to amplify our impact.
-                </p>
-                <div className="flex gap-3 mt-3">
-                  <a
-                    href="https://facebook.com/helpwestmoreland"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-600 hover:text-primary-700 font-medium"
-                  >
-                    Facebook
-                  </a>
-                  <a
-                    href="https://instagram.com/helpwestmoreland"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-600 hover:text-primary-700 font-medium"
-                  >
-                    Instagram
-                  </a>
-                  <a
-                    href="https://tiktok.com/@helpwestmoreland"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-600 hover:text-primary-700 font-medium"
-                  >
-                    TikTok
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
 
-          {/* FAQ Section */}
+          {/* Additional Giving Options */}
           <div className="border-t pt-12">
             <h2 className="text-2xl font-display font-bold text-center mb-8">
-              Donation Questions
+              More Ways to Give
             </h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  Is my donation tax-deductible?
-                </h3>
-                <p className="text-gray-700">
-                  Yes! Help Westmoreland is a registered charitable organization.
-                  You'll receive a tax receipt for all donations via email.
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-primary-50 p-6 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">Basic food supplies</h3>
+                <p className="text-gray-700 mb-4">
+                  Support families with essential nutrition.
                 </p>
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  How much of my donation goes to families?
-                </h3>
-                <p className="text-gray-700">
-                  100% of online donations go directly to relief efforts.
-                  Administrative costs are covered separately through grants and
-                  corporate partnerships.
+              <div className="bg-accent-50 p-6 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">GoFundMe</h3>
+                <p className="text-gray-700 mb-4">
+                  Donate directly to our campaign on GoFundMe.
                 </p>
+                <a
+                  href="https://www.gofundme.com/f/help-westmoreland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-4 py-2 rounded-lg transition"
+                >
+                  Donate on GoFundMe
+                </a>
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  Can I donate from outside Jamaica?
-                </h3>
-                <p className="text-gray-700">
-                  Absolutely! We accept donations from anywhere in the world
-                  through PayPal and major credit cards.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  When will I receive my tax receipt?
-                </h3>
-                <p className="text-gray-700">
-                  Tax receipts are sent automatically via email within 24-48
-                  hours of your donation. Check your spam folder if you don't see
-                  it.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  Can I cancel my recurring donation?
-                </h3>
-                <p className="text-gray-700">
-                  Yes, you can cancel anytime through the donation portal or by
-                  emailing us at{" "}
-                  <a
-                    href="mailto:helpwestmoreland@gmail.com"
-                    className="text-primary-600 hover:underline"
-                  >
-                    helpwestmoreland@gmail.com
-                  </a>
-                  . No questions asked.
+              <div className="bg-primary-50 p-6 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">Interac Transfer</h3>
+                <p className="text-gray-700 mb-4">
+                  Send Interac transfer to: <strong>??@helpwestmoreland.com</strong>
                 </p>
               </div>
             </div>
