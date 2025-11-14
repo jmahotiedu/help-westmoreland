@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function DonatePage() {
-  // Get Donorbox campaign ID from environment variable
   const donorboxCampaignId = process.env.NEXT_PUBLIC_DONORBOX_CAMPAIGN_ID;
+  const gofundmeUrl = process.env.NEXT_PUBLIC_GOFUNDME_URL;
 
   return (
     <div className="py-16">
@@ -76,22 +76,21 @@ export default function DonatePage() {
               Make Your Donation
             </h2>
 
-            <div className="flex justify-center">
-              <DonorboxEmbed
-                campaignId={donorboxCampaignId}
-                showRecurring={true}
-              />
-            </div>
-
-            {/* Alternative Contact Info if Donorbox not set up */}
-            {!donorboxCampaignId && (
-              <div className="text-center mt-6">
+            {donorboxCampaignId ? (
+              <div className="flex justify-center">
+                <DonorboxEmbed
+                  campaignId={donorboxCampaignId}
+                  showRecurring={true}
+                />
+              </div>
+            ) : (
+              <div className="text-center py-6">
                 <p className="text-gray-600 mb-4">
-                  For immediate assistance with donations, please contact us:
+                  To give by credit card, contact us and we’ll send you a secure link. You can also give by email or the options below.
                 </p>
                 <a
-                  href="mailto:helpwestmoreland@gmail.com"
-                  className="inline-block bg-primary-500 hover:bg-primary-600 text-white font-semibold px-8 py-3 rounded-lg transition"
+                  href="mailto:helpwestmoreland@gmail.com?subject=Donation%20inquiry"
+                  className="inline-block bg-accent-500 hover:bg-accent-600 text-white font-semibold px-8 py-3 rounded-lg transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2"
                 >
                   Email Us to Donate
                 </a>
@@ -198,29 +197,31 @@ export default function DonatePage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-primary-50 p-6 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">Basic food supplies</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">In-kind donations</h3>
                 <p className="text-gray-700 mb-4">
-                  Support families with essential nutrition.
+                  Food, clothing, and supplies go directly to families. See <a href="/help#goods" className="text-primary-600 hover:text-primary-700 font-medium">How to Help</a> for drop-off details.
                 </p>
               </div>
-              <div className="bg-accent-50 p-6 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">GoFundMe</h3>
-                <p className="text-gray-700 mb-4">
-                  Donate directly to our campaign on GoFundMe.
-                </p>
-                <a
-                  href="https://www.gofundme.com/f/help-westmoreland"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-4 py-2 rounded-lg transition"
-                >
-                  Donate on GoFundMe
-                </a>
-              </div>
+              {gofundmeUrl && (
+                <div className="bg-accent-50 p-6 rounded-lg">
+                  <h3 className="font-semibold text-gray-900 mb-2">GoFundMe</h3>
+                  <p className="text-gray-700 mb-4">
+                    Donate via our GoFundMe campaign.
+                  </p>
+                  <a
+                    href={gofundmeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold px-4 py-2 rounded-lg transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                  >
+                    Donate on GoFundMe
+                  </a>
+                </div>
+              )}
               <div className="bg-primary-50 p-6 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">Interac Transfer</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Interac e-Transfer</h3>
                 <p className="text-gray-700 mb-4">
-                  Send Interac transfer to: <strong>??@helpwestmoreland.com</strong>
+                  Send an Interac e-Transfer to our team. <a href="mailto:helpwestmoreland@gmail.com?subject=Interac%20e-Transfer%20details" className="text-primary-600 hover:text-primary-700 font-medium">Email us</a> for details.
                 </p>
               </div>
             </div>

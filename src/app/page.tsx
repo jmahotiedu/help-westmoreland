@@ -1,8 +1,16 @@
 import Link from "next/link";
+import {
+  HeartIcon,
+  CubeIcon,
+  UserGroupIcon,
+  BuildingOfficeIcon,
+} from "@heroicons/react/24/outline";
 import HeroVideo from "@/components/home/HeroVideo";
+import HeroContent from "@/components/home/HeroContent";
 import ImpactStats from "@/components/home/ImpactStats";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import { ButtonLink } from "@/components/ui/Button";
 
 export default function Home() {
   const impactStats = [
@@ -15,45 +23,24 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center">
+      <section
+        className="relative h-[90vh] min-h-[600px] flex items-center justify-center"
+        aria-labelledby="hero-heading"
+      >
         <HeroVideo
           videoSrc="/videos/hero-video.mp4"
           posterSrc="/images/hero-poster.jpg"
           className="absolute inset-0"
         />
 
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 drop-shadow-lg">
-            Help Rebuild Lives After Hurricane Melissa
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md">
-            Families in Westmoreland, Jamaica need your help. Together, we can
-            restore homes, dignity, and hope.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/donate">
-              <Button size="lg" className="w-full sm:w-auto">
-                Donate Now
-              </Button>
-            </Link>
-            <Link href="/about">
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
-              >
-                Learn Our Story
-              </Button>
-            </Link>
-          </div>
-        </div>
+        <HeroContent />
       </section>
 
       {/* Impact Stats */}
       <ImpactStats stats={impactStats} />
 
       {/* Urgency Section */}
-      <section className="py-16 bg-accent-50">
+      <AnimatedSection className="py-16 bg-accent-50" whileInView>
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
@@ -69,12 +56,12 @@ export default function Home() {
             <p className="text-xl font-semibold text-accent-600 mb-8">
               Your donation today brings immediate relief and long-term recovery.
             </p>
-            <Link href="/donate">
-              <Button size="lg">Give Hope Today</Button>
-            </Link>
+            <ButtonLink href="/donate" size="lg">
+              Give Hope Today
+            </ButtonLink>
           </div>
         </Container>
-      </section>
+      </AnimatedSection>
 
       {/* How We Help - Three Phases */}
       <section className="py-16">
@@ -128,11 +115,9 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/programs">
-              <Button variant="secondary" size="lg">
-                See All Our Programs
-              </Button>
-            </Link>
+            <ButtonLink href="/programs" variant="secondary" size="lg">
+              See All Our Programs
+            </ButtonLink>
           </div>
         </Container>
       </section>
@@ -144,55 +129,63 @@ export default function Home() {
             Ways You Can Help
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
             <Link
               href="/donate"
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition text-center group"
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
-              <div className="text-4xl mb-3">💝</div>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition">
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent-100 text-accent-600 mb-4 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden>
+                <HeartIcon className="w-7 h-7" />
+              </span>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
                 Donate Money
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Your financial gift provides immediate relief
               </p>
             </Link>
 
             <Link
               href="/help#goods"
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition text-center group"
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
-              <div className="text-4xl mb-3">📦</div>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition">
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-100 text-primary-600 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors" aria-hidden>
+                <CubeIcon className="w-7 h-7" />
+              </span>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
                 Donate Goods
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Send supplies directly to families in need
               </p>
             </Link>
 
             <Link
               href="/help#volunteer"
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition text-center group"
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
-              <div className="text-4xl mb-3">🤝</div>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition">
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-100 text-primary-600 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors" aria-hidden>
+                <UserGroupIcon className="w-7 h-7" />
+              </span>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
                 Volunteer
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Join our ground team in Westmoreland
               </p>
             </Link>
 
             <Link
               href="/partner"
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition text-center group"
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
-              <div className="text-4xl mb-3">🏢</div>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition">
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-100 text-primary-600 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors" aria-hidden>
+                <BuildingOfficeIcon className="w-7 h-7" />
+              </span>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
                 Partner With Us
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Corporate partnerships for larger impact
               </p>
             </Link>
@@ -212,24 +205,22 @@ export default function Home() {
               full transparency on how every dollar is spent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/transparency">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
-                >
-                  View Our Financials
-                </Button>
-              </Link>
-              <Link href="/faq">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
-                >
-                  Read FAQs
-                </Button>
-              </Link>
+              <ButtonLink
+                href="/transparency"
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
+              >
+                View Our Financials
+              </ButtonLink>
+              <ButtonLink
+                href="/faq"
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
+              >
+                Read FAQs
+              </ButtonLink>
             </div>
           </div>
         </Container>
@@ -245,14 +236,13 @@ export default function Home() {
             <p className="text-xl mb-8">
               Your donation today can change a family's story. Will you help?
             </p>
-            <Link href="/donate">
-              <Button
-                size="lg"
-                className="bg-white text-accent-600 hover:bg-gray-100 text-xl px-12 py-4"
-              >
-                Donate Now
-              </Button>
-            </Link>
+            <ButtonLink
+              href="/donate"
+              size="lg"
+              className="bg-white text-accent-600 hover:bg-gray-100 text-xl px-12 py-4"
+            >
+              Donate Now
+            </ButtonLink>
           </div>
         </Container>
       </section>
