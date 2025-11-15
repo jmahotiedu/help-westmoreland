@@ -45,7 +45,7 @@ export default function HeroContent() {
         variants={item(reduceMotion)}
       >
         When Hurricane Melissa made landfall, it didn&apos;t just destroy
-        homes. It tore through the parish—shattering safety, stability, and
+        homes. It tore through the parish, shattering safety, stability, and
         connection. Help Westmoreland was created to fill that gap and bring
         relief, dignity, and hope to our people.
       </motion.p>

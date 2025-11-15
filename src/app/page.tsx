@@ -46,12 +46,15 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               Right Now, Families Are Waiting
             </h2>
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-lg text-gray-700 mb-6">
               Hurricane Melissa left thousands without shelter, food, or clean
               water. Every day that passes, families struggle to survive in
               damaged homes with limited resources. Children are missing school.
               Elders are going without medication. Small businesses have been
               destroyed.
+            </p>
+            <p className="text-lg text-gray-700 mb-8">
+              Behind every number are parents, children, and neighbors in Westmoreland who are counting on us. Your gift connects directly to them.
             </p>
             <p className="text-xl font-semibold text-accent-600 mb-8">
               Your donation today brings immediate relief and long-term recovery.

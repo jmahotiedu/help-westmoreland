@@ -213,8 +213,7 @@ export default function PartnerForm() {
           <p className="font-semibold">Partnership inquiry submitted!</p>
           <p className="text-sm">
             Thank you for your interest in partnering with Help Westmoreland.
-            Our partnerships team will contact you within 2-3 business days to
-            discuss opportunities.
+            Our partnerships team will contact you to discuss how we can work together.
           </p>
         </div>
       )}
