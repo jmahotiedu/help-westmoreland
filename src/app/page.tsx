@@ -38,6 +38,35 @@ export default function Home() {
 
       {/* Impact Stats */}
       <ImpactStats stats={impactStats} />
+      <p className="text-center text-primary-700 font-semibold bg-primary-50 py-3">
+        100% of donations go directly to relief.
+      </p>
+
+      {/* Opening Statement (from Site Specifications) */}
+      <AnimatedSection className="py-16 bg-white" whileInView>
+        <Container>
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-lg text-gray-700 mb-6">
+              Westmoreland is hurting. Families are facing the unthinkable:
+              homes washed away, food gone, clothes ruined, and entire
+              communities left waiting for help that comes too slowly. Parents
+              are trying to stay strong with almost nothing left. Children are
+              frightened. Elders are vulnerable.
+            </p>
+            <p className="text-2xl font-display font-bold text-primary-700 mb-6">
+              But hope is not lost.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              Help Westmoreland stands in the gap, providing immediate relief,
+              comfort, and support so no family has to walk this journey alone.
+            </p>
+            <p className="text-lg font-semibold text-gray-800">
+              No one should face disaster alone. Not one family. Not one child.
+              Not one community.
+            </p>
+          </div>
+        </Container>
+      </AnimatedSection>
 
       {/* Urgency Section */}
       <AnimatedSection className="py-16 bg-accent-50" whileInView>
