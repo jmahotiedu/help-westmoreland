@@ -17,17 +17,17 @@ export default function DonatePage() {
     "https://www.gofundme.com/f/help-westmoreland";
 
   return (
-    <div className="py-16">
+    <div className="py-12 sm:py-16">
       <Container>
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4 sm:mb-6">
               Change a Family's Story Today
             </h1>
 
-            <div className="prose prose-lg mx-auto">
-              <p className="text-xl text-gray-700">
+            <div className="prose prose-lg mx-auto text-left sm:text-center">
+              <p className="text-base sm:text-xl text-gray-700">
                 When a storm destroys your home, families don't just lose walls and a roof, they lose safety, normalcy, and the ability to protect the people they love.
               </p>
               <p className="text-xl text-gray-700">

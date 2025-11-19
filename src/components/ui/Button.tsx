@@ -7,7 +7,8 @@ const buttonStyles = (
   size: "sm" | "md" | "lg"
 ) =>
   cn(
-    "inline-flex items-center justify-center font-semibold rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+    "inline-flex items-center justify-center font-semibold rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 touch-manipulation active:scale-[0.98]",
+    "min-h-[44px] sm:min-h-[2.25rem]",
     {
       "bg-accent-500 hover:bg-accent-600 text-white focus-visible:ring-accent-500":
         variant === "primary",
@@ -15,9 +16,9 @@ const buttonStyles = (
         variant === "secondary",
       "border-2 border-current text-primary-600 hover:bg-primary-50 focus-visible:ring-primary-500":
         variant === "outline",
-      "px-4 py-2 text-sm": size === "sm",
+      "px-4 py-2.5 text-sm": size === "sm",
       "px-6 py-3 text-base": size === "md",
-      "px-8 py-4 text-lg": size === "lg",
+      "px-8 py-4 text-lg min-h-[48px] sm:min-h-[3rem]": size === "lg",
     }
   );
 

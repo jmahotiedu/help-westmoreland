@@ -22,9 +22,9 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section - mobile: 70dvh min, desktop 90vh; safe-area bottom */}
       <section
-        className="relative h-[90vh] min-h-[600px] flex items-center justify-center"
+        className="relative min-h-[max(500px,70dvh)] sm:min-h-[max(600px,90vh)] flex items-center justify-center pb-[env(safe-area-inset-bottom)]"
         aria-labelledby="hero-heading"
       >
         <HeroVideo
@@ -38,12 +38,12 @@ export default function Home() {
 
       {/* Impact Stats */}
       <ImpactStats stats={impactStats} />
-      <p className="text-center text-primary-700 font-semibold bg-primary-50 py-3">
+      <p className="text-center text-primary-700 font-semibold bg-primary-50 py-3 px-4 text-sm sm:text-base">
         100% of donations go directly to relief.
       </p>
 
       {/* Opening Statement (from Site Specifications) */}
-      <AnimatedSection className="py-16 bg-white" whileInView>
+      <AnimatedSection className="py-12 sm:py-16 bg-white" whileInView>
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-700 mb-6">
@@ -69,10 +69,10 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Urgency Section */}
-      <AnimatedSection className="py-16 bg-accent-50" whileInView>
+      <AnimatedSection className="py-12 sm:py-16 bg-accent-50" whileInView>
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 sm:mb-6">
               Right Now, Families Are Waiting
             </h2>
             <p className="text-lg text-gray-700 mb-6">
@@ -88,7 +88,7 @@ export default function Home() {
             <p className="text-xl font-semibold text-accent-600 mb-8">
               Your donation today brings immediate relief and long-term recovery.
             </p>
-            <ButtonLink href="/donate" size="lg">
+            <ButtonLink href="/donate" size="lg" className="w-full sm:w-auto">
               Give Hope Today
             </ButtonLink>
           </div>
@@ -96,15 +96,15 @@ export default function Home() {
       </AnimatedSection>
 
       {/* How We Help - Three Phases */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-center mb-8 sm:mb-12">
             Our Three-Phase Approach
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {/* Relief Phase */}
-            <div className="bg-blue-50 rounded-lg p-8 text-center">
+            <div className="bg-blue-50 rounded-lg p-6 sm:p-8 text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
@@ -118,7 +118,7 @@ export default function Home() {
             </div>
 
             {/* Rebuild Phase */}
-            <div className="bg-green-50 rounded-lg p-8 text-center">
+            <div className="bg-green-50 rounded-lg p-6 sm:p-8 text-center">
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
 
             {/* Recovery Phase */}
-            <div className="bg-purple-50 rounded-lg p-8 text-center">
+            <div className="bg-purple-50 rounded-lg p-6 sm:p-8 text-center">
               <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl font-bold">3</span>
               </div>
@@ -155,16 +155,16 @@ export default function Home() {
       </section>
 
       {/* Ways to Help */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-center mb-8 sm:mb-12">
             Ways You Can Help
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" role="list">
             <Link
               href="/donate"
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="bg-white p-5 sm:p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-[0.99] min-h-[120px] flex flex-col justify-center items-center"
             >
               <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent-100 text-accent-600 mb-4 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden>
                 <HeartIcon className="w-7 h-7" />
@@ -179,12 +179,12 @@ export default function Home() {
 
             <Link
               href="/help#goods"
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="bg-white p-5 sm:p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-[0.99] min-h-[120px] flex flex-col justify-center items-center"
             >
               <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-100 text-primary-600 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors" aria-hidden>
                 <CubeIcon className="w-7 h-7" />
               </span>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
                 Donate Goods
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -194,12 +194,12 @@ export default function Home() {
 
             <Link
               href="/help#volunteer"
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="bg-white p-5 sm:p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-[0.99] min-h-[120px] flex flex-col justify-center items-center"
             >
               <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-100 text-primary-600 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors" aria-hidden>
                 <UserGroupIcon className="w-7 h-7" />
               </span>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
                 Volunteer
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -209,12 +209,12 @@ export default function Home() {
 
             <Link
               href="/partner"
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="bg-white p-5 sm:p-6 rounded-xl shadow-sm hover:shadow-md hover:border-primary-100 border border-transparent transition-all text-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-[0.99] min-h-[120px] flex flex-col justify-center items-center"
             >
               <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-100 text-primary-600 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors" aria-hidden>
                 <BuildingOfficeIcon className="w-7 h-7" />
               </span>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-accent-600 transition-colors">
                 Partner With Us
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -226,22 +226,22 @@ export default function Home() {
       </section>
 
       {/* Trust & Transparency */}
-      <section className="py-16 bg-primary-700 text-white">
+      <section className="py-12 sm:py-16 bg-primary-700 text-white">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 sm:mb-6">
               Your Trust Matters
             </h2>
-            <p className="text-xl mb-8 text-primary-100">
+            <p className="text-base sm:text-xl mb-6 sm:mb-8 text-primary-100">
               100% of your donation goes directly to relief efforts. We provide
               full transparency on how every dollar is spent.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <ButtonLink
                 href="/transparency"
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
+                className="w-full sm:w-auto min-h-[48px] justify-center bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
               >
                 View Our Financials
               </ButtonLink>
@@ -249,7 +249,7 @@ export default function Home() {
                 href="/faq"
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
+                className="w-full sm:w-auto min-h-[48px] justify-center bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
               >
                 Read FAQs
               </ButtonLink>
@@ -259,19 +259,19 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-b from-accent-500 to-accent-600 text-white">
+      <section className="py-12 sm:py-20 bg-gradient-to-b from-accent-500 to-accent-600 text-white pb-[max(3rem,env(safe-area-inset-bottom))]">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 sm:mb-6">
               Every Family Deserves Safety and Hope
             </h2>
-            <p className="text-xl mb-8">
+            <p className="text-base sm:text-xl mb-6 sm:mb-8">
               Your donation today can change a family's story. Will you help?
             </p>
             <ButtonLink
               href="/donate"
               size="lg"
-              className="bg-white text-accent-600 hover:bg-gray-100 text-xl px-12 py-4"
+              className="w-full sm:w-auto min-h-[48px] justify-center bg-white text-accent-600 hover:bg-gray-100 text-lg sm:text-xl px-8 sm:px-12 py-4"
             >
               Donate Now
             </ButtonLink>
