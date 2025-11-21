@@ -22,9 +22,9 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Section - mobile: 70dvh min, desktop 90vh; safe-area bottom */}
+      {/* Hero Section - mobile: 70dvh min, desktop 90vh; space above green stats */}
       <section
-        className="relative min-h-[max(500px,70dvh)] sm:min-h-[max(600px,90vh)] flex items-center justify-center pb-[env(safe-area-inset-bottom)]"
+        className="relative min-h-[max(500px,70dvh)] sm:min-h-[max(600px,90vh)] flex items-center justify-center pb-[max(4rem,env(safe-area-inset-bottom))] sm:pb-[max(5rem,env(safe-area-inset-bottom))]"
         aria-labelledby="hero-heading"
       >
         <HeroVideo
