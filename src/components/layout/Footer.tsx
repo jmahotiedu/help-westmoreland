@@ -80,6 +80,7 @@ export default function Footer() {
               <ul className="space-y-2 text-sm" role="list">
                 <li><FooterLink href="/about">About Us</FooterLink></li>
                 <li><FooterLink href="/programs">Programs</FooterLink></li>
+                <li><FooterLink href="/gallery">Gallery</FooterLink></li>
                 <li><FooterLink href="/transparency">Transparency</FooterLink></li>
                 <li><FooterLink href="/faq">FAQ</FooterLink></li>
               </ul>

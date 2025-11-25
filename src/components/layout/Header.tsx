@@ -29,6 +29,7 @@ export default function Header() {
     { name: "About Us", href: "/about" },
     { name: "Our Mission", href: "/mission" },
     { name: "Programs", href: "/programs" },
+    { name: "Gallery", href: "/gallery" },
     { name: "How to Help", href: "/help" },
     { name: "Partner With Us", href: "/partner" },
     { name: "Transparency", href: "/transparency" },
