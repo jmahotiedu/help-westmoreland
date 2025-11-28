@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 interface HeroVideoProps {
   /** H.264 MP4 – plays on Chrome, Windows, and most browsers (required). */
   videoSrc: string;
-  /** HEVC/H.265 MP4 – optional; used by Safari/iOS when available for better quality or smaller file. */
+  /** HEVC/H.265 MP4 – optional; Safari/iOS may prefer this. */
   videoSrcHevc?: string;
   posterSrc?: string;
   className?: string;
@@ -18,86 +18,100 @@ export default function HeroVideo({
   className = "",
 }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [hasError, setHasError] = useState(false);
+  // Start with video NOT ready – show gradient/poster until video plays
+  const [videoReady, setVideoReady] = useState(false);
 
   const hasMultipleSources = Boolean(videoSrcHevc && videoSrcHevc !== videoSrc);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (!hasMultipleSources && !videoSrc) return;
 
-    let errorCheckTimeout: ReturnType<typeof setTimeout> | null = null;
+    const handleCanPlay = () => {
+      // Video has enough data to start playing
+      setVideoReady(true);
+    };
+
+    const handlePlaying = () => {
+      // Video is actually playing
+      setVideoReady(true);
+    };
 
     const handleError = () => {
-      // With multiple sources, the browser tries each in order; only show fallback after all fail.
-      if (hasMultipleSources) {
-        errorCheckTimeout = setTimeout(() => {
-          if (video.error && video.readyState < 2) {
-            setHasError(true);
-            if (process.env.NODE_ENV === "development") {
-              console.warn(
-                "[HeroVideo] All sources failed:",
-                video.error.message || `code ${video.error.code}`,
-                "- Ensure hero-video.mp4 is H.264 and optionally hero-video-hevc.mp4 is HEVC."
-              );
-            }
-          }
-        }, 400);
-      } else {
-        setHasError(true);
-        if (video.error && process.env.NODE_ENV === "development") {
-          console.warn(
-            "[HeroVideo] Video failed:",
-            video.error.message || `code ${video.error.code}`,
-            "- Provide H.264 at videoSrc and optionally HEVC at videoSrcHevc."
-          );
-        }
+      // Keep gradient visible (videoReady stays false)
+      if (process.env.NODE_ENV === "development") {
+        console.warn(
+          "[HeroVideo] Video failed to load. Ensure hero-video.mp4 is H.264 encoded.",
+          video.error?.message || ""
+        );
       }
     };
+
+    video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("playing", handlePlaying);
     video.addEventListener("error", handleError);
 
+    // Try to play
     const playPromise = video.play();
-    if (playPromise !== undefined) playPromise.catch(() => {});
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay blocked or failed – gradient stays visible
+      });
+    }
 
     return () => {
-      if (errorCheckTimeout) clearTimeout(errorCheckTimeout);
+      video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("playing", handlePlaying);
       video.removeEventListener("error", handleError);
     };
-  }, [videoSrc, videoSrcHevc, hasMultipleSources]);
+  }, [videoSrc, videoSrcHevc]);
 
   return (
     <div className={`relative w-full h-full overflow-hidden ${className}`}>
-      {/* Fallback gradient only when all sources fail to load */}
+      {/* Gradient + poster: visible by default, fades out when video plays */}
       <div
-        className={`absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 transition-opacity duration-500 ${
-          hasError ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 transition-opacity duration-700 ${
+          videoReady ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
         aria-hidden
-      />
-      {/* HEVC first (Safari/iOS), then H.264 (Chrome/Windows); or single source */}
+      >
+        {/* Poster image over gradient if provided */}
+        {posterSrc && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={posterSrc}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
+      </div>
+
+      {/* Video: multiple sources (HEVC + H.264) or single source */}
       <video
         ref={videoRef}
-        poster={posterSrc}
-        className={`absolute inset-0 w-full h-full object-cover ${
-          hasError ? "opacity-0" : "opacity-100"
-        } transition-opacity duration-500`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+          videoReady ? "opacity-100" : "opacity-0"
+        }`}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
         aria-label="Hero video showing Hurricane Melissa relief efforts"
-        data-video-status={hasError ? "error" : "ok"}
+        data-video-status={videoReady ? "playing" : "loading"}
         {...(!hasMultipleSources && { src: videoSrc })}
       >
         {hasMultipleSources && (
           <>
-            <source src={videoSrcHevc!} type="video/mp4; codecs=hvc1" />
-            <source src={videoSrc} type="video/mp4; codecs=avc1" />
+            {/* HEVC for Safari/iOS – no codec hint, let browser probe */}
+            <source src={videoSrcHevc!} type="video/mp4" />
+            {/* H.264 fallback for Chrome/Windows/etc */}
+            <source src={videoSrc} type="video/mp4" />
           </>
         )}
       </video>
+
+      {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 pointer-events-none" />
     </div>
   );
