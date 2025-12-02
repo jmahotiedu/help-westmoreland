@@ -207,7 +207,7 @@ export default function VolunteerForm() {
           <p className="text-sm">
             Please try again or email us directly at{" "}
             <a
-              href="mailto:helpwestmoreland@gmail.com"
+              href="mailto:helpwestmoreland@gmail.com?subject=Volunteer%20Application"
               className="underline font-medium"
             >
               helpwestmoreland@gmail.com

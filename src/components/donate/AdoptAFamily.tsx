@@ -74,9 +74,41 @@ export default function AdoptAFamily({
 
   const handleSponsor = (family: Family) => {
     setSelectedFamily(family);
-    // In production, this would open a Donorbox form or custom donation flow
-    // For now, scroll to donation form or show modal
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Build mailto link with prepopulated content
+    const subject = `Adopt-A-Family Sponsorship: ${family.name}`;
+    const body = `Hello Help Westmoreland Team,
+
+I would like to sponsor ${family.name} from ${family.location} through your Adopt-A-Family program.
+
+FAMILY DETAILS:
+- Family Name: ${family.name}
+- Location: ${family.location}
+- Family Size: ${family.size} members
+- Current Needs: ${family.needs.join(", ")}
+- Monthly Support Amount: $${family.monthlySupport}
+
+THEIR STORY:
+${family.story}
+
+MY INFORMATION:
+- Full Name: 
+- Email: 
+- Phone (optional): 
+- Preferred Contact Method: Email / Phone
+
+SPONSORSHIP PREFERENCE:
+- [ ] Monthly recurring ($${family.monthlySupport}/month)
+- [ ] One-time donation (Amount: $______)
+
+Please send me information on how to set up my sponsorship and begin supporting this family.
+
+Thank you for the work you do!
+
+Best regards`;
+
+    const mailtoLink = `mailto:helpwestmoreland@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
   };
 
   return (

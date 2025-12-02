@@ -91,7 +91,7 @@ export default function DonatePage() {
                   To give by credit card, contact us and we’ll send you a secure link. You can also give by email or the options below.
                 </p>
                 <a
-                  href="mailto:helpwestmoreland@gmail.com?subject=Donation%20inquiry"
+                  href="mailto:helpwestmoreland@gmail.com?subject=I%20want%20to%20donate%20to%20Help%20Westmoreland&body=Hello%20Help%20Westmoreland%20Team%2C%0A%0AI%20would%20like%20to%20make%20a%20donation%20to%20support%20your%20relief%20efforts%20in%20Westmoreland%2C%20Jamaica.%0A%0ADONATION%20DETAILS%3A%0A-%20Donation%20Amount%3A%20%24______%0A-%20Type%3A%20%5B%20%5D%20One-time%20%20%2F%20%20%5B%20%5D%20Monthly%0A%0AMY%20INFORMATION%3A%0A-%20Full%20Name%3A%20%0A-%20Email%3A%20%0A%0APlease%20send%20me%20a%20secure%20payment%20link%20or%20instructions.%0A%0AThank%20you!"
                   className="inline-block bg-accent-500 hover:bg-accent-600 text-white font-semibold px-8 py-3 rounded-lg transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2"
                 >
                   Email Us to Donate
@@ -221,7 +221,7 @@ export default function DonatePage() {
               <div className="bg-primary-50 p-6 rounded-lg">
                 <h3 className="font-semibold text-gray-900 mb-2">Interac e-Transfer</h3>
                 <p className="text-gray-700 mb-4">
-                  Send Interac e-Transfer to: helpwestmoreland@gmail.com. <a href="mailto:helpwestmoreland@gmail.com?subject=Interac%20e-Transfer%20details" className="text-primary-600 hover:text-primary-700 font-medium">Email us</a> for details.
+                  Send Interac e-Transfer to: helpwestmoreland@gmail.com. <a href="mailto:helpwestmoreland@gmail.com?subject=Interac%20e-Transfer%20Donation&body=Hello%20Help%20Westmoreland%20Team%2C%0A%0AI%20would%20like%20to%20send%20an%20Interac%20e-Transfer%20donation.%0A%0ADONATION%20DETAILS%3A%0A-%20Amount%3A%20%24______%0A%0AMY%20INFORMATION%3A%0A-%20Full%20Name%3A%20%0A-%20Email%3A%20%0A%0APlease%20confirm%20the%20e-Transfer%20details%20and%20any%20security%20question%2Fanswer%20if%20needed.%0A%0AThank%20you!" className="text-primary-600 hover:text-primary-700 font-medium">Email us</a> for details.
                 </p>
               </div>
             </div>
