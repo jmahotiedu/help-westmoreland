@@ -10,12 +10,15 @@ import SkipToContent from "@/components/accessibility/SkipToContent";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const poppins = Poppins({
   weight: ["600", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
+  display: "swap",
+  preload: false,
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://helpwestmoreland.org";
