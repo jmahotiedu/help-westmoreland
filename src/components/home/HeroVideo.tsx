@@ -65,7 +65,7 @@ export default function HeroVideo({
 
   return (
     <div
-      className={`relative w-full h-full overflow-hidden bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 ${className}`}
+      className={`overflow-hidden bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 ${className}`}
     >
       {/* Gradient + poster until video is actually playing (never white) */}
       <div
