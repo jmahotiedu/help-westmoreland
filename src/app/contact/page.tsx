@@ -92,7 +92,7 @@ export default function ContactPage() {
                       ⚡ Urgent Matters
                     </h3>
                     <p className="text-sm text-gray-700">
-                      For immediate assistance, email us at{" "}
+                      For immediate assistance, for fastest response email us at{" "}
                       <a
                         href="mailto:helpwestmoreland@gmail.com?subject=URGENT%3A%20Help%20Westmoreland%20Inquiry"
                         className="text-primary-600 hover:text-primary-700 font-medium"
