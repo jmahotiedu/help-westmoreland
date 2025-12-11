@@ -111,8 +111,8 @@ export default function HeroVideo({
         )}
       </video>
 
-      {/* Overlay for text readability (lighter so video shows through) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/20 to-black/45 pointer-events-none" />
+      {/* Overlay for text readability - stronger for better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60 pointer-events-none" />
     </div>
   );
 }
