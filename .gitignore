@@ -40,6 +40,17 @@ yarn-error.log*
 # vercel
 .vercel
 
+# tooling (do not commit)
+.claude/
+.cursor/
+.cursorrules
+.aider*
+rebase-map.txt
+scripts/rebase-all-edit.ps1
+scripts/rebase-amend-next.ps1
+scripts/fix-vercel-author.ps1
+scripts/edit-first.ps1
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
