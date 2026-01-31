@@ -51,6 +51,11 @@ export default function HeroVideo({
     video.addEventListener("playing", handlePlaying);
     video.addEventListener("error", handleError);
 
+    // If video already loaded (e.g. readyState 4) before listeners attached, show it
+    if (video.readyState >= 2) {
+      setVideoReady(true);
+    }
+
     // Try to play
     const playPromise = video.play();
     if (playPromise !== undefined) {
