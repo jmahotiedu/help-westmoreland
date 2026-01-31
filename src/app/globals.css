@@ -2,45 +2,61 @@
 
 /* Help Westmoreland Brand Colors - Jamaican Inspired */
 :root {
-  /* Primary Green (Jamaica-inspired) */
-  --color-primary-50: #f0fdf4;
-  --color-primary-100: #dcfce7;
-  --color-primary-500: #22c55e;
-  --color-primary-600: #16a34a;
-  --color-primary-700: #15803d;
+  /* Primary Green (Jamaica flag / island green) */
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-500: #009639;
+  --color-primary-600: #007a2e;
+  --color-primary-700: #006024;
 
-  /* Accent Gold (warm earth tone) */
-  --color-accent-500: #d97706;
-  --color-accent-600: #b45309;
+  /* Accent Gold (Jamaica gold / sunshine) */
+  --color-accent-50: #fefce8;
+  --color-accent-100: #fef9c3;
+  --color-accent-500: #c9a227;
+  --color-accent-600: #b8860b;
+  --color-accent-700: #9a7209;
+
+  /* Warm red (earth / warmth accent) */
+  --color-red-500: #c41e3a;
+  --color-red-600: #a01830;
+
+  /* Deep black & earth tones */
+  --color-black: #0f0f0f;
+  --color-earth-100: #f5f0e8;
+  --color-earth-200: #e8dfd0;
+  --color-earth-700: #6b5344;
 
   /* Semantic Colors */
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-danger: #c41e3a;
 
   /* Background & Foreground */
-  --background: #ffffff;
-  --foreground: #1f2937;
+  --background: #faf8f5;
+  --foreground: #0f0f0f;
 
   /* Focus ring - visible and consistent */
-  --focus-ring: 2px solid var(--color-primary-500);
+  --focus-ring: 2px solid var(--color-accent-500);
   --focus-offset: 2px;
 }
 
 @theme inline {
-  /* Brand Colors */
-  --color-primary-50: #f0fdf4;
-  --color-primary-100: #dcfce7;
-  --color-primary-500: #22c55e;
-  --color-primary-600: #16a34a;
-  --color-primary-700: #15803d;
+  /* Brand Colors - Jamaican palette */
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-500: #009639;
+  --color-primary-600: #007a2e;
+  --color-primary-700: #006024;
 
-  --color-accent-500: #d97706;
-  --color-accent-600: #b45309;
+  --color-accent-50: #fefce8;
+  --color-accent-100: #fef9c3;
+  --color-accent-500: #c9a227;
+  --color-accent-600: #b8860b;
+  --color-accent-700: #9a7209;
 
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-danger: #c41e3a;
 
   /* Default Colors */
   --color-background: var(--background);
@@ -76,8 +92,8 @@ body {
   }
 }
 
-/* Selection color for readability */
+/* Selection color for readability (Jamaican green) */
 ::selection {
-  background-color: #bbf7d0;
-  color: #14532d;
+  background-color: #d1fae5;
+  color: #006024;
 }

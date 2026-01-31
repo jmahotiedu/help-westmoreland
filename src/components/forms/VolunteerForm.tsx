@@ -52,11 +52,12 @@ export default function VolunteerForm() {
   ];
 
   const skillOptions = [
-    "Food Distribution",
-    "Transportation/Driving",
-    "Administration",
-    "Social Media/Marketing",
     "Counseling",
+    "Education",
+    "Social media & Digital presence",
+    "Fundraising & donor outreach",
+    "Building credible partnerships",
+    "Sorting, Packing & Delivery",
   ];
 
   const validateForm = (): boolean => {
@@ -291,7 +292,7 @@ export default function VolunteerForm() {
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition ${
               errors.phone ? "border-red-500" : "border-gray-300"
             }`}
-            placeholder="e.g. +1 876 555 0123"
+            placeholder="e.g. +1 (XXX) XXX-XXXX"
             disabled={isSubmitting}
           />
           {errors.phone && (

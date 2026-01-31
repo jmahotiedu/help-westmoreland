@@ -21,7 +21,7 @@ export default function TrustBadges({
     },
     {
       icon: "✓",
-      label: "PayPal Verified",
+      label: "Secure Payments",
       description: "Trusted payment processing",
     },
     {
@@ -31,8 +31,8 @@ export default function TrustBadges({
     },
     {
       icon: "📋",
-      label: "Tax Receipts",
-      description: "Official documentation provided",
+      label: "Tax Inquiries",
+      description: "Contact us for your jurisdiction",
     },
   ];
 
@@ -80,9 +80,8 @@ export default function TrustBadges({
             separate funding. Your donation goes directly to families in need.
           </p>
           <div className="flex justify-center gap-6 text-xs text-gray-500 mt-4">
-            <span>✓ IRS Registered</span>
-            <span>✓ Independently Audited</span>
             <span>✓ Community Verified</span>
+            <span>✓ Transparent Reporting</span>
           </div>
         </div>
       </div>

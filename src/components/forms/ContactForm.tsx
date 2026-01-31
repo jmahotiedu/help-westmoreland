@@ -102,7 +102,7 @@ export default function ContactForm() {
         <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
           <p className="font-semibold">Message sent successfully!</p>
           <p className="text-sm">
-            Thank you for contacting us. We&apos;ll get back to you within 24-48 hours.
+            Thank you for contacting us. We&apos;ll get back to you as soon as we can.
           </p>
         </div>
       )}
@@ -204,8 +204,7 @@ export default function ContactForm() {
       </Button>
 
       <p className="text-xs text-gray-500 text-center">
-        We typically respond within 24-48 hours. For urgent matters, please call
-        or email us directly.
+        For urgent matters, email us at helpwestmoreland@gmail.com.
       </p>
     </form>
   );
