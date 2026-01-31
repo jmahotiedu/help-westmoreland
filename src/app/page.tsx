@@ -29,7 +29,6 @@ export default function Home() {
       >
         <HeroVideo
           videoSrc="/videos/hero-video.mp4"
-          videoSrcHevc="/videos/hero-video-hevc.mp4"
           posterSrc="/images/hero-poster.jpg"
           className="absolute inset-0"
         />
