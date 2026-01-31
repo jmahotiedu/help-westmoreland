@@ -29,16 +29,13 @@ export default function HeroVideo({
     video.addEventListener("canplay", handleCanPlay);
     video.addEventListener("error", handleError);
 
+    // If already ready (e.g. cached or remount), show immediately
+    if (video.readyState >= 2) setIsLoaded(true);
+
     const playPromise = video.play();
     if (playPromise !== undefined) playPromise.catch(() => {});
 
-    // Give the video more time to load (e.g. 5MB+ file); only fall back on real error or after 15s
-    const t = setTimeout(() => {
-      if (!video.readyState || video.readyState < 2) setUseFallback(true);
-    }, 15000);
-
     return () => {
-      clearTimeout(t);
       video.removeEventListener("loadeddata", handleLoadedData);
       video.removeEventListener("canplay", handleCanPlay);
       video.removeEventListener("error", handleError);
