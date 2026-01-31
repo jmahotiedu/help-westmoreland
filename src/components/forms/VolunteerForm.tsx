@@ -52,15 +52,10 @@ export default function VolunteerForm() {
   ];
 
   const skillOptions = [
-    "Construction/Repairs",
-    "Medical/Healthcare",
-    "Teaching/Education",
     "Food Distribution",
     "Transportation/Driving",
     "Administration",
     "Social Media/Marketing",
-    "Translation",
-    "Childcare",
     "Counseling",
   ];
 
@@ -200,8 +195,7 @@ export default function VolunteerForm() {
         <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
           <p className="font-semibold">Application submitted successfully!</p>
           <p className="text-sm">
-            Thank you for your interest in volunteering. Our team will review
-            your application and contact you within 3-5 business days.
+            Thank you for your interest in volunteering. Our team will review your application and contact you soon.
           </p>
         </div>
       )}
@@ -297,7 +291,7 @@ export default function VolunteerForm() {
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition ${
               errors.phone ? "border-red-500" : "border-gray-300"
             }`}
-            placeholder="+1 876-XXX-XXXX"
+            placeholder="+1 XXX-XXX-XXXX"
             disabled={isSubmitting}
           />
           {errors.phone && (
@@ -322,7 +316,7 @@ export default function VolunteerForm() {
             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition ${
               errors.location ? "border-red-500" : "border-gray-300"
             }`}
-            placeholder="City, Parish"
+            placeholder="City"
             disabled={isSubmitting}
           />
           {errors.location && (

@@ -87,8 +87,7 @@ export default function ProgramsPage() {
               </li>
             </ul>
             <p className="mt-6 text-lg font-semibold text-gray-900">
-              Rebuilding is more than fixing structures—it's restoring dignity
-              and stability.
+              Rebuilding is more than fixing structures, it's restoring dignity and stability.
             </p>
           </div>
         </section>
