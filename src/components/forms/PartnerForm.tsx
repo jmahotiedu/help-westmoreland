@@ -224,7 +224,7 @@ export default function PartnerForm() {
           <p className="text-sm">
             Please try again or email us directly at{" "}
             <a
-              href="mailto:helpwestmoreland@gmail.com"
+              href="mailto:helpwestmoreland@gmail.com?subject=Partnership%20Inquiry"
               className="underline font-medium"
             >
               helpwestmoreland@gmail.com

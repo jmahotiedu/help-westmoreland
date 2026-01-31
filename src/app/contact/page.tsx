@@ -40,7 +40,7 @@ export default function ContactPage() {
                       <span>📧</span> Email
                     </h3>
                     <a
-                      href="mailto:helpwestmoreland@gmail.com"
+                      href="mailto:helpwestmoreland@gmail.com?subject=Question%20for%20Help%20Westmoreland"
                       className="text-primary-600 hover:text-primary-700 text-base sm:text-lg inline-flex items-center min-h-[44px] touch-manipulation"
                     >
                       helpwestmoreland@gmail.com
@@ -92,7 +92,13 @@ export default function ContactPage() {
                       ⚡ Urgent Matters
                     </h3>
                     <p className="text-sm text-gray-700">
-                      For immediate assistance, for fastest response email us at helpwestmoreland@gmail.com.
+                      For immediate assistance, email us at{" "}
+                      <a
+                        href="mailto:helpwestmoreland@gmail.com?subject=URGENT%3A%20Help%20Westmoreland%20Inquiry"
+                        className="text-primary-600 hover:text-primary-700 font-medium"
+                      >
+                        helpwestmoreland@gmail.com
+                      </a>.
                     </p>
                   </div>
                 </div>

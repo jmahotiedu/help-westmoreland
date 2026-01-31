@@ -100,7 +100,7 @@ export default function Footer() {
             <div>
               <h3 className="text-white font-semibold mb-4">Connect</h3>
               <p className="text-sm mb-4">
-                <FooterLink href="mailto:helpwestmoreland@gmail.com">
+                <FooterLink href="mailto:helpwestmoreland@gmail.com?subject=Question%20about%20Help%20Westmoreland">
                   helpwestmoreland@gmail.com
                 </FooterLink>
               </p>
