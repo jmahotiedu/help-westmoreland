@@ -19,27 +19,31 @@ export default function HeroVideo({
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !videoSrc) return;
 
     const handleLoadedData = () => setIsLoaded(true);
+    const handleCanPlay = () => setIsLoaded(true);
     const handleError = () => setUseFallback(true);
 
     video.addEventListener("loadeddata", handleLoadedData);
+    video.addEventListener("canplay", handleCanPlay);
     video.addEventListener("error", handleError);
 
     const playPromise = video.play();
     if (playPromise !== undefined) playPromise.catch(() => {});
 
+    // Give the video more time to load (e.g. 5MB+ file); only fall back on real error or after 15s
     const t = setTimeout(() => {
       if (!video.readyState || video.readyState < 2) setUseFallback(true);
-    }, 5000);
+    }, 15000);
 
     return () => {
       clearTimeout(t);
       video.removeEventListener("loadeddata", handleLoadedData);
+      video.removeEventListener("canplay", handleCanPlay);
       video.removeEventListener("error", handleError);
     };
-  }, []);
+  }, [videoSrc]);
 
   const showVideo = isLoaded && !useFallback;
 
@@ -59,15 +63,24 @@ export default function HeroVideo({
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         poster={posterSrc}
         aria-label="Hero video showing Hurricane Melissa relief efforts"
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 pointer-events-none" />
+      {/* While loading: show poster if available, else subtle pulse */}
       {!showVideo && !useFallback && (
-        <div className="absolute inset-0 bg-gray-800/80 animate-pulse" aria-hidden />
+        posterSrc ? (
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${posterSrc})` }}
+            aria-hidden
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gray-800/80 animate-pulse" aria-hidden />
+        )
       )}
     </div>
   );

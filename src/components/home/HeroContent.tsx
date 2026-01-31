@@ -28,7 +28,7 @@ export default function HeroContent() {
 
   return (
     <motion.div
-      className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto"
+      className="relative z-10 text-center text-primary-700 px-4 max-w-5xl mx-auto"
       variants={container(reduceMotion)}
       initial="hidden"
       animate="visible"
@@ -44,10 +44,15 @@ export default function HeroContent() {
         className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md leading-relaxed"
         variants={item(reduceMotion)}
       >
-        When Hurricane Melissa made landfall, it didn&apos;t just destroy
-        homes. It tore through the parish, shattering safety, stability, and
-        connection. Help Westmoreland was created to fill that gap and bring
-        relief, dignity, and hope to our people.
+        When Hurricane Melissa made landfall in New Hope, Westmoreland, it
+        didn&apos;t just destroy homes. It tore through the parish, shattering
+        safety, stability, and connection. Families were cut off. Children
+        slept in wet clothes. Elders went without medication. Entire communities
+        waited, praying help would reach them in time. In that moment, one
+        truth became impossible to ignore: Westmoreland needed its own lifeline,
+        a movement that refuses to let families suffer in silence. Help
+        Westmoreland was created to fill that gap and bring relief, dignity,
+        and hope to our people.
       </motion.p>
       <motion.div
         className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -60,7 +65,7 @@ export default function HeroContent() {
           href="/about"
           variant="outline"
           size="lg"
-          className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-primary-700"
+          className="w-full sm:w-auto border-2 border-primary-700 text-primary-700 bg-white/90 hover:bg-primary-700 hover:text-white hover:border-primary-700"
         >
           Learn Our Story
         </ButtonLink>
