@@ -44,7 +44,7 @@ function FooterLink({
   return (
     <Link
       href={href}
-      className={`hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded ${className}`}
+      className={`inline-block py-2 -my-2 min-h-[44px] flex items-center hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded touch-manipulation ${className}`}
       {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
     >
       {children}
@@ -56,10 +56,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300" role="contentinfo">
+    <footer
+      className="bg-gray-900 text-gray-300 pb-[env(safe-area-inset-bottom)]"
+      role="contentinfo"
+    >
       <Container>
-        <div className="py-12">
-          <div className="grid md:grid-cols-4 gap-8 md:gap-12">
+        <div className="py-10 sm:py-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {/* About */}
             <div className="md:col-span-1">
               <h2 className="text-white font-display font-bold text-lg mb-4">
@@ -100,14 +103,14 @@ export default function Footer() {
                   helpwestmoreland@gmail.com
                 </FooterLink>
               </p>
-              <ul className="flex gap-4" role="list" aria-label="Social media">
+              <ul className="flex gap-2 sm:gap-4" role="list" aria-label="Social media">
                 {socialLinks.map(({ name, href, icon }) => (
                   <li key={name}>
                     <a
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition p-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                      className="inline-flex items-center justify-center min-h-[44px] min-w-[44px] text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 touch-manipulation"
                       aria-label={`Follow us on ${name}`}
                     >
                       {icon}

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function HelpPage() {
   return (
-    <div className="py-16">
+    <div className="py-12 sm:py-16">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-display font-bold text-center text-gray-900 mb-6">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-center text-gray-900 mb-4 sm:mb-6">
           How to Help
         </h1>
 
-        <p className="text-xl text-center text-gray-700 max-w-3xl mx-auto mb-16">
+        <p className="text-base sm:text-xl text-center text-gray-700 max-w-3xl mx-auto mb-10 sm:mb-16">
           Rebuilding Westmoreland takes all of us. Together, through giving,
           volunteering, and partnership, we can bring relief, dignity, and hope
           to families in need.

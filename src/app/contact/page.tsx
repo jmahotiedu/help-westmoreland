@@ -10,16 +10,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-16">
+    <div className="py-12 sm:py-16">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-display font-bold text-center text-gray-900 mb-8">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-center text-gray-900 mb-6 sm:mb-8">
           Get In Touch
         </h1>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Contact Form */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="bg-white rounded-lg shadow-lg p-5 sm:p-8">
               <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">
                 Send Us a Message
               </h2>
@@ -28,7 +28,7 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div className="space-y-6">
-              <div className="bg-white rounded-lg shadow-lg p-8">
+              <div className="bg-white rounded-lg shadow-lg p-5 sm:p-8">
                 <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">
                   Contact Information
                 </h2>
@@ -41,7 +41,7 @@ export default function ContactPage() {
                     </h3>
                     <a
                       href="mailto:helpwestmoreland@gmail.com"
-                      className="text-primary-600 hover:text-primary-700 text-lg"
+                      className="text-primary-600 hover:text-primary-700 text-base sm:text-lg inline-flex items-center min-h-[44px] touch-manipulation"
                     >
                       helpwestmoreland@gmail.com
                     </a>
