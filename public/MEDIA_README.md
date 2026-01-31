@@ -1,14 +1,28 @@
 # Media assets
 
-**Hero video** (`videos/hero-video.mp4`) and **hero poster** (`images/hero-poster.jpg`) were copied from:
+**Hero video** supports **both computer and mobile** by offering two codecs:
 
-- **Relief Site / Site Photos / other/**  
-  - Video: `VID-20251106-WA0004.MP4` → `hero-video.mp4`  
-  - Image: `041a0dac-f1ab-47f8-ab27-77aedf8a8749.JPG` → `hero-poster.jpg`
+| File | Codec | Used by |
+|------|--------|---------|
+| `videos/hero-video.mp4` | **H.264** (required) | Chrome, Windows, Edge, Firefox, most browsers |
+| `videos/hero-video-hevc.mp4` | **HEVC/H.265** (optional) | Safari, iOS, newer macOS – often smaller or better quality from phones |
 
-To use a different hero clip or poster, replace these files (keep the same names so the homepage keeps working), or update the paths in `src/app/page.tsx` and `HeroVideo.tsx`.
+The hero uses both when `hero-video-hevc.mp4` exists: Safari/iOS picks HEVC first; Chrome/Windows use the H.264 fallback. If only `hero-video.mp4` exists, that single file is used (must be H.264 for Chrome).
 
-**Other media in Site Photos** you can add later:
+**Hero poster:** `images/hero-poster.jpg` (from Site Photos/other). Replace as needed.
 
-- **Site Photos (root):** `good.mov`, `One good shot.mov`, `good cut end.mov`, etc. — convert `.mov` to `.mp4` for best browser support, then place in `public/videos/` and reference from any page.
-- **Site Photos / other:** More `.MP4` and `.JPG` files for galleries, impact sections, or About/Mission visuals. Copy into `public/images/` or `public/videos/` and use paths like `/images/yourfile.jpg` or `/videos/yourfile.mp4`.
+**Setting up both codecs (computer + mobile):**
+
+1. **H.264 (required)** – `public/videos/hero-video.mp4`  
+   - Must be H.264 so Chrome/Windows can play it.  
+   - If your only file is from a phone (often HEVC), re-encode:  
+     `ffmpeg -i input.mp4 -c:v libx264 -c:a aac -movflags +faststart public/videos/hero-video.mp4`
+
+2. **HEVC (optional)** – `public/videos/hero-video-hevc.mp4`  
+   - Use the original phone recording or an HEVC encode.  
+   - Copy or re-encode and save as `hero-video-hevc.mp4`.  
+   - If this file is missing, the site still works using only `hero-video.mp4` (H.264).
+
+**Other media:** Site Photos has more `.MP4`/`.mov` and `.JPG`; convert `.mov` to `.mp4` (H.264 or HEVC as above) and add under `public/videos/` or `public/images/` as needed.
+
+**Testing:** With the dev server running (`npm run dev`), run `npm run test:hero` to verify the video URL(s) and homepage.
