@@ -45,9 +45,6 @@ export default function ContactPage() {
                     >
                       helpwestmoreland@gmail.com
                     </a>
-                    <p className="text-sm text-gray-600 mt-1">
-                      We respond within 24-48 hours
-                    </p>
                   </div>
 
                   {/* Social Media */}
@@ -87,9 +84,6 @@ export default function ContactPage() {
                         </a>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600 mt-2">
-                      DM us for the fastest response
-                    </p>
                   </div>
 
                   {/* Urgent Matters */}
@@ -98,8 +92,7 @@ export default function ContactPage() {
                       ⚡ Urgent Matters
                     </h3>
                     <p className="text-sm text-gray-700">
-                      For immediate assistance, contact us through Instagram DM
-                      for the fastest response.
+                      For immediate assistance, for fastest response email us at helpwestmoreland@gmail.com.
                     </p>
                   </div>
                 </div>
@@ -110,17 +103,8 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-gray-900 mb-3">
                   📍 Based in Westmoreland, Jamaica
                 </h3>
-                <p className="text-sm text-gray-700 mb-3">
-                  We're on the ground every day helping families rebuild their
-                  lives. Our team typically responds to inquiries within 24-48
-                  hours.
-                </p>
                 <p className="text-sm text-gray-700">
-                  <strong>Response Times:</strong>
-                  <br />
-                  Weekdays: Within 24 hours
-                  <br />
-                  Weekends: Within 48 hours
+                  We're on the ground every day helping families rebuild their lives.
                 </p>
               </div>
             </div>

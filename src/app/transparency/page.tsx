@@ -46,8 +46,7 @@ export default function TransparencyPage() {
               <li className="flex items-start">
                 <span className="text-primary-600 font-bold mr-3">•</span>
                 <div>
-                  <strong>Small Business Support:</strong> Help shop owners,
-                  vendors & artisans restart income
+                  <strong>Small Business Support:</strong> Help shop owners, vendors and other entrepreneurs restart income
                 </div>
               </li>
               <li className="flex items-start">

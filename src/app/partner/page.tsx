@@ -17,10 +17,7 @@ export default function PartnerPage() {
         </h1>
 
         <p className="text-xl text-center text-gray-700 max-w-3xl mx-auto mb-16">
-          When Hurricane Melissa tore through Westmoreland, families lost homes,
-          food, clothing, and stability. Rebuilding isn't a one-day effort—it
-          requires unity, resources, and long-term commitment. That's where
-          partners like you make the biggest impact.
+          When Hurricane Melissa tore through Westmoreland, families lost homes, food, clothing, and stability. Rebuilding isn't a one-day effort, it requires unity, resources, and long-term commitment. That's where partners like you make the biggest impact.
         </p>
 
         {/* Why Partner */}
@@ -46,7 +43,7 @@ export default function PartnerPage() {
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 font-bold mr-3">•</span>
-              Support farmers and small businesses restarting after loss
+              Support farmers and small businesses restart
             </li>
           </ul>
         </section>
@@ -95,9 +92,7 @@ export default function PartnerPage() {
                 Volunteer Teams
               </h3>
               <p className="text-gray-700">
-                Corporate, school, and church groups are welcome. Activities
-                include sorting donations, distribution, community cleanups, and
-                rebuilding support.
+                Corporate, school, and church groups are welcome. Activities include sorting donations and distribution.
               </p>
             </div>
           </div>
@@ -139,9 +134,7 @@ export default function PartnerPage() {
             Start a Partnership
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-2xl mx-auto">
-            Ready to make a lasting impact? Fill out the form below and our
-            partnerships team will contact you within 2-3 business days to discuss
-            how we can work together.
+            Ready to make a lasting impact? Fill out the form below and our partnerships team will contact you to discuss how we can work together.
           </p>
           <PartnerForm />
         </section>
