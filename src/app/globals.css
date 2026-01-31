@@ -21,6 +21,10 @@
   /* Background & Foreground */
   --background: #ffffff;
   --foreground: #1f2937;
+
+  /* Focus ring - visible and consistent */
+  --focus-ring: 2px solid var(--color-primary-500);
+  --focus-offset: 2px;
 }
 
 @theme inline {
@@ -53,4 +57,27 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessible focus - only when using keyboard, not on mouse click */
+:where(a, button, [role="button"], input, select, textarea):focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Respect reduced motion for animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Selection color for readability */
+::selection {
+  background-color: #bbf7d0;
+  color: #14532d;
 }

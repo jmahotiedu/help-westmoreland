@@ -41,28 +41,8 @@ export default function DonorboxEmbed({
     };
   }, [campaignId]);
 
-  // If no campaign ID is provided, show setup instructions
   if (!campaignId) {
-    return (
-      <div className={`bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 ${className}`}>
-        <div className="text-center">
-          <div className="text-4xl mb-4">💳</div>
-          <h3 className="text-xl font-bold mb-3">Donation Form Ready</h3>
-          <p className="text-gray-600 mb-4">
-            To activate donations, please complete the Donorbox setup:
-          </p>
-          <ol className="text-left max-w-md mx-auto space-y-2 text-gray-700">
-            <li>1. Create a Donorbox account at donorbox.org</li>
-            <li>2. Create a campaign for "Help Westmoreland"</li>
-            <li>3. Copy your campaign ID</li>
-            <li>4. Add it to your environment variables</li>
-          </ol>
-          <p className="text-sm text-gray-500 mt-4">
-            See <code className="bg-gray-200 px-2 py-1 rounded">DONORBOX_SETUP_GUIDE.md</code> for detailed instructions.
-          </p>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   return (

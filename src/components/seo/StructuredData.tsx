@@ -25,13 +25,15 @@ interface DonateActionSchema {
   url: string;
 }
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://helpwestmoreland.org";
+
 export function OrganizationStructuredData() {
   const schema: OrganizationSchema = {
     "@context": "https://schema.org",
     "@type": "NGO",
     name: "Help Westmoreland",
-    url: "https://helpwestmoreland.org",
-    logo: "https://helpwestmoreland.org/images/logo.png",
+    url: SITE_URL,
+    logo: `${SITE_URL}/images/logo.png`,
     description:
       "Help Westmoreland provides disaster relief and rebuilding support to families in Westmoreland, Jamaica affected by Hurricane Melissa.",
     sameAs: [
@@ -63,7 +65,7 @@ export function DonateActionStructuredData() {
       "@type": "NGO",
       name: "Help Westmoreland",
     },
-    url: "https://helpwestmoreland.org/donate",
+    url: `${SITE_URL}/donate`,
   };
 
   return (
@@ -88,7 +90,7 @@ export function BreadcrumbStructuredData({ items }: { items: BreadcrumbItem[] })
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `https://helpwestmoreland.org${item.url}`,
+      item: `${SITE_URL}${item.url}`,
     })),
   };
 

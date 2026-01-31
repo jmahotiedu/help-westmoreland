@@ -18,10 +18,10 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://helpwestmoreland.org";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  ),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Help Westmoreland | Disaster Relief for Jamaica",
     template: "%s | Help Westmoreland",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://helpwestmoreland.org",
+    url: siteUrl,
     siteName: "Help Westmoreland",
     images: [
       {

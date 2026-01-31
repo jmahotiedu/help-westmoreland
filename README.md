@@ -41,28 +41,18 @@ cd help-westmoreland
 npm install
 ```
 
-3. Create environment variables file:
+3. Copy environment template and set variables (optional for local dev):
 ```bash
-# Copy the template and fill in your values
 cp .env.example .env.local
 ```
+Edit `.env.local` with your values. For production, set `NEXT_PUBLIC_SITE_URL` to your live URL (e.g. `https://helpwestmoreland.org`). See `.env.example` for all options.
 
-4. Add your environment variables to `.env.local`:
-```env
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_FORMSPREE_CONTACT_ID=your_contact_form_id
-NEXT_PUBLIC_FORMSPREE_VOLUNTEER_ID=your_volunteer_form_id
-NEXT_PUBLIC_FORMSPREE_PARTNER_ID=your_partner_form_id
-NEXT_PUBLIC_DONORBOX_CAMPAIGN_ID=helpwestmoreland
-```
-
-5. Run development server:
+4. Run development server:
 ```bash
 npm run dev
 ```
 
-6. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 
