@@ -34,7 +34,7 @@ export default function HeroContent() {
 
   return (
     <motion.div
-      className="relative z-10 text-center text-primary-700 px-4 sm:px-6 max-w-5xl mx-auto w-full min-w-0 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]"
+      className="relative z-10 text-center text-white px-4 sm:px-6 max-w-5xl mx-auto w-full min-w-0 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]"
       variants={container(reduceMotion)}
       initial={mounted ? "hidden" : false}
       animate="visible"
@@ -42,14 +42,16 @@ export default function HeroContent() {
     >
       <motion.h1
         id="hero-heading"
-        className="text-[1.75rem] leading-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 sm:mb-6 drop-shadow-lg"
+        className="text-[1.75rem] leading-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 sm:mb-6 drop-shadow-2xl"
+        style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)' }}
         variants={item(reduceMotion)}
         suppressHydrationWarning
       >
         Rebuilding Lives in Westmoreland: One Family at a Time
       </motion.h1>
       <motion.p
-        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-md leading-relaxed"
+        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-xl leading-relaxed"
+        style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)' }}
         variants={item(reduceMotion)}
         suppressHydrationWarning
       >
@@ -71,7 +73,7 @@ export default function HeroContent() {
         <ButtonLink
           href="/donate"
           size="lg"
-          className="w-full sm:w-auto min-h-[48px] justify-center"
+          className="w-full sm:w-auto min-h-[48px] justify-center bg-accent-600 hover:bg-accent-700 text-white font-bold shadow-lg"
         >
           Donate Now
         </ButtonLink>
@@ -79,7 +81,7 @@ export default function HeroContent() {
           href="/about"
           variant="outline"
           size="lg"
-          className="w-full sm:w-auto border-2 border-primary-700 text-primary-700 bg-white/90 hover:bg-primary-700 hover:text-white hover:border-primary-700 min-h-[48px] justify-center"
+          className="w-full sm:w-auto border-2 border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-primary-700 hover:border-white min-h-[48px] justify-center font-semibold shadow-lg"
         >
           Learn Our Story
         </ButtonLink>
