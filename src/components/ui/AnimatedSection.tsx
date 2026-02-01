@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useReducedMotion } from "framer-motion";
 import { motion } from "framer-motion";
 
@@ -18,6 +19,11 @@ export default function AnimatedSection({
   whileInView = false,
 }: AnimatedSectionProps) {
   const reduceMotion = useReducedMotion() ?? false;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const variants = {
     hidden: reduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 },
@@ -34,7 +40,8 @@ export default function AnimatedSection({
     <MotionTag
       className={className}
       variants={variants}
-      initial="hidden"
+      initial={mounted ? "hidden" : false}
+      suppressHydrationWarning
       {...(whileInView
         ? { whileInView: "visible", viewport: { once: true, margin: "-40px" } }
         : { animate: "visible" })}

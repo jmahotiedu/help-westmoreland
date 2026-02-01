@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useReducedMotion } from "framer-motion";
 import { motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/Button";
@@ -25,24 +26,32 @@ const item = (reduceMotion: boolean) => ({
 
 export default function HeroContent() {
   const reduceMotion = useReducedMotion() ?? false;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <motion.div
       className="relative z-10 text-center text-primary-700 px-4 sm:px-6 max-w-5xl mx-auto w-full min-w-0 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]"
       variants={container(reduceMotion)}
-      initial="hidden"
+      initial={mounted ? "hidden" : false}
       animate="visible"
+      suppressHydrationWarning
     >
       <motion.h1
         id="hero-heading"
         className="text-[1.75rem] leading-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 sm:mb-6 drop-shadow-lg"
         variants={item(reduceMotion)}
+        suppressHydrationWarning
       >
         Rebuilding Lives in Westmoreland: One Family at a Time
       </motion.h1>
       <motion.p
         className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-md leading-relaxed"
         variants={item(reduceMotion)}
+        suppressHydrationWarning
       >
         When Hurricane Melissa made landfall in New Hope, Westmoreland, it
         didn&apos;t just destroy homes. It tore through the parish, shattering
@@ -57,6 +66,7 @@ export default function HeroContent() {
       <motion.div
         className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full sm:w-auto"
         variants={item(reduceMotion)}
+        suppressHydrationWarning
       >
         <ButtonLink
           href="/donate"
